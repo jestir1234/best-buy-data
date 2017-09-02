@@ -1,0 +1,2 @@
+class DataFetch < ApplicationRecord
+end

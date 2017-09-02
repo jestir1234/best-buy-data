@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api, default: {format: :json} do
-    resources :collections, only: [:index]
+    get '/collections' => 'collections#get_data', as: "get_data"
   end
 end

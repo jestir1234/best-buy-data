@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  result_count: 1
+  result_percentage: MyString
+  top_three: 
+  top_three_count: 1
+
+two:
+  name: MyString
+  result_count: 1
+  result_percentage: MyString
+  top_three: 
+  top_three_count: 1
