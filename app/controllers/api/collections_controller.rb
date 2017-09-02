@@ -8,116 +8,118 @@ class Api::CollectionsController < ApplicationController
     page_content = Net::HTTP.get(URI.parse("https://www.bestbuy.com/site/searchpage.jsp?st=#{query_string}&_dyncharset=UTF-8&id=pcat17071&type=page&sc=Global&cp=1&nrp=&sp=&qp=&list=n&af=true&iht=y&usc=All+Categories&ks=960&keys=keys"))
     document = Nokogiri::HTML(page_content)
 
-    @brands = {
-      "Samsung" => {
-        result_count: 0,
-        result_percentage: 0,
-        top_three: {
-            count: 0,
-            rank: {
-              first: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              second: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              third: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              }
-            }
-          }
-        },
-      "LG" => {
-        result_count: 0,
-        result_percentage: 0,
-        top_three: {
-            count: 0,
-            rank: {
-              first: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              second: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              third: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              }
-            }
-          }
-        },
-      "Toshiba" => {
-        result_count: 0,
-        result_percentage: 0,
-        top_three: {
-            count: 0,
-            rank: {
-              first: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              second: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              third: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              }
-            }
-          }
-        },
-      "Sony" => {
-        result_count: 0,
-        result_percentage: 0,
-        top_three: {
-            count: 0,
-            rank: {
-              first: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              second: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              },
-              third: {
-                count: 0,
-                products: {
-                  total_review_count: 0
-                }
-              }
-            }
-          }
-        }
-      }
+    # @brands = {
+    #   "Samsung" => {
+    #     result_count: 0,
+    #     result_percentage: 0,
+    #     top_three: {
+    #         count: 0,
+    #         rank: {
+    #           first: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           second: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           third: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           }
+    #         }
+    #       }
+    #     },
+    #   "LG" => {
+    #     result_count: 0,
+    #     result_percentage: 0,
+    #     top_three: {
+    #         count: 0,
+    #         rank: {
+    #           first: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           second: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           third: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           }
+    #         }
+    #       }
+    #     },
+    #   "Toshiba" => {
+    #     result_count: 0,
+    #     result_percentage: 0,
+    #     top_three: {
+    #         count: 0,
+    #         rank: {
+    #           first: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           second: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           third: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           }
+    #         }
+    #       }
+    #     },
+    #   "Sony" => {
+    #     result_count: 0,
+    #     result_percentage: 0,
+    #     top_three: {
+    #         count: 0,
+    #         rank: {
+    #           first: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           second: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           },
+    #           third: {
+    #             count: 0,
+    #             products: {
+    #               total_review_count: 0
+    #             }
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+
+    
 
     @total_top_three_searched = 0 #fetch this number from db
     total_results = document.css("div.results-summary").text.split(" ")[7].to_i
@@ -159,9 +161,37 @@ class Api::CollectionsController < ApplicationController
     end
 
     @total_top_three_searched += 1;
-    debugger
 
     render 'api/collections/show'
+  end
+
+  def initialize_brand_data(name)
+      @brands[name] = {
+        result_count: 0,
+        result_percentage: 0,
+        top_three: {
+            count: 0,
+            rank: {
+              first: {
+                count: 0,
+                products: {
+                  total_review_count: 0
+                }
+              },
+              second: {
+                count: 0,
+                products: {
+                  total_review_count: 0
+                }
+              },
+              third: {
+                count: 0,
+                products: {
+                  total_review_count: 0
+                }
+              }
+            }
+        }
   end
 
 end
