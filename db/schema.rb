@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902184100) do
+ActiveRecord::Schema.define(version: 20170903142019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,20 +21,26 @@ ActiveRecord::Schema.define(version: 20170902184100) do
     t.string   "result_percentage"
     t.json     "top_three"
     t.integer  "top_three_count"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "top_three_percentage"
   end
 
   create_table "data_fetches", force: :cascade do |t|
     t.date     "date"
     t.string   "search_term"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.json     "data"
+    t.string   "top_three_results"
+    t.string   "top_searched_result"
+    t.string   "most_reviewed"
+    t.string   "highest_rated"
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.integer  "model"
+    t.string   "model"
     t.integer  "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
