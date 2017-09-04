@@ -11,7 +11,7 @@ Running the application locally:
   - run "bundle install" in your command line
   - run "rails s" to start the server
 
-Alternatively, you can visit the [live application](https://best-buy-data-collection.herokuapp.com/).
+Alternatively, you can use the [live application](https://best-buy-data-collection.herokuapp.com/).
 
 ## API ENDPOINTS
 
