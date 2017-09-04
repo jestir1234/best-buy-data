@@ -6,7 +6,7 @@ This application is an API designed to be a tool for collecting search results d
 ## Installation
 Running the application locally:
   - Clone the repository
-  - Ensure you have postgresql, ruby, and rails installed on your machine
+  - Ensure you have [postgresql](https://www.postgresql.org/download/), [ruby](https://www.ruby-lang.org/en/documentation/installation/), and [rails](http://installrails.com/) installed on your machine
   - cd into the project folder
   - run "bundle install" in your command line
   - run "rails s" to start the server
