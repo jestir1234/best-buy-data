@@ -1,6 +1,7 @@
 require 'net/http'
 require 'uri'
 
+
 class Api::CollectionsController < ApplicationController
 
   INTERESTED_BRANDS = ["Samsung", "LG", "Toshiba", "Sony"]
@@ -197,6 +198,23 @@ class Api::CollectionsController < ApplicationController
         @brands[el.get_attribute('data-value')]["result_count"] += el.get_attribute('data-count').to_i
         @brands[el.get_attribute('data-value')]["result_percentage"] = ((@brands[el.get_attribute('data-value')]["result_count"].to_f / @brands["total_results"]) * 100).round(2).to_s + "%"
       end
+    end
+  end
+
+  def data_to_csv
+    query_string = params[:query]
+
+    if query_string == "brand"
+      @item = Brand.all
+    elsif query_string == "product"
+      @item = Product.all
+    elsif query_string == "data"
+      @item = DataFetch.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @item.to_csv }
     end
   end
 
