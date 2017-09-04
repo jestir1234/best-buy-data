@@ -33,3 +33,9 @@ Alternatively, you can use the [live application](https://best-buy-data-collecti
 - Postgresql
 - Nokogiri
 - CSV
+
+Example CSV data
+
+- [Data](https://github.com/jestir1234/best-buy-data/blob/data.csv)
+
+- [Brand](https://github.com/jestir1234/best-buy-data/blob/brand.csv)

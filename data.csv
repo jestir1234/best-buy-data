@@ -1,5 +1,3 @@
-name,result_count,result_percentage,top_three_count,top_three_percentage
-LG,32,16.93%,1,33.33%
-Toshiba,6,3.17%,0,0%
-Sony,29,15.34%,0,0%
-Samsung,73,36.32%,4,66.67%
+date,search_term,top_three_results,top_searched,most_reviewed,highest_rated
+2017-09-04,smart+tv,"Insignia™, Samsung, LG",Insignia™,Samsung with 5853 reviews,Insignia™ with 4.5 out of 5
+2017-09-04,curved+smart+tv,"Samsung, Samsung, Samsung",Samsung,Samsung with 213 reviews,Samsung with 4.7 out of 5
