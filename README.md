@@ -1,6 +1,6 @@
 # Best Buy Data Collection
 
-This application is an API designed to be a tool for collecting search results data from bestbuy.com. Currently, it provides data for the following brands based on search term: Samsung, LG, Toshiba, and Sony.
+This application is an API designed to be a tool for collecting search results data from bestbuy.com. Currently, it provides data for the following brands based on search term: **Samsung, LG, Toshiba, and Sony**.
 
 
 ## Installation
