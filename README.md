@@ -10,6 +10,7 @@ Running the application locally:
   - cd into the project folder
   - run "bundle install" in your command line
   - run "rails s" to start the server
+  - visit localhost:3000
 
 Alternatively, you can use the [live application](https://best-buy-data-collection.herokuapp.com/).
 
