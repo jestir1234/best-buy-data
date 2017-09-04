@@ -36,6 +36,6 @@ Alternatively, you can use the [live application](https://best-buy-data-collecti
 
 Example CSV data
 
-- [Data](https://github.com/jestir1234/best-buy-data/blob/data.csv)
+- [Data](https://github.com/jestir1234/best-buy-data/blob/master/data.csv)
 
-- [Brand](https://github.com/jestir1234/best-buy-data/blob/brand.csv)
+- [Brand](https://github.com/jestir1234/best-buy-data/blob/master/brands.csv)
