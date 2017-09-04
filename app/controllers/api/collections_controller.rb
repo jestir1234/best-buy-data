@@ -218,6 +218,45 @@ class Api::CollectionsController < ApplicationController
     end
   end
 
+  def all_data_fetches
+    @data = DataFetch.all
+
+    render json: @data
+  end
+
+  def data_fetch
+    today = params[:date].split("/").map {|x| x.to_i }
+    @data = DataFetch.where(date: Date.new(*today))
+
+    render json: @data
+  end
+
+  def all_brands
+    @brands = Brand.all
+
+    render json: @brands
+  end
+
+  def get_brand
+    query_string = params[:brand].gsub("_", " ")
+    @brand = Brand.where(name: query_string)
+
+    render json: @brand
+  end
+
+  def all_products
+    @products = Product.all
+
+    render json: @products
+  end
+
+  def get_product
+    query_string = params[:model]
+    @product = Product.where(model: query_string)
+
+    render json: @product
+  end
+
 
 
 end
