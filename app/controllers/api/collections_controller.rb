@@ -6,6 +6,11 @@ class Api::CollectionsController < ApplicationController
 
   INTERESTED_BRANDS = ["Samsung", "LG", "Toshiba", "Sony"]
 
+
+  def index
+    
+  end
+
   def get_data
     # Use query string from API URL to interpolate the search term into bestbuy's search URL
     # Fetch HTML with Nokogiri library

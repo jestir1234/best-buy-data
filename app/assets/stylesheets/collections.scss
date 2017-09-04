@@ -1,3 +1,17 @@
 // Place all the styles related to the collections controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-color: #ccf4ed;
+  font-family: 'Cabin', sans-serif;
+}
+
+ul {
+  border: 3px inset #787a7a;
+}
+
+li {
+  border: 1px solid #8d9291;
+  padding-left: 20px;
+}
