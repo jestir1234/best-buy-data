@@ -16,7 +16,7 @@ Alternatively, you can use the [live application](https://best-buy-data-collecti
 ## API ENDPOINTS
 
 | Endpoint | Example | Description |
-| --- | --- |
+| --- | --- | --- |
 | `/collections` | api/collections?query=smart+tv | Will perform data collection from bestbuy.com with search term "smart tv" and output collected data in JSON format |
 | `/collections/data.csv` | api/collections/data.csv?query=brand | Will output Brand table from database into csv format |
 | `/collections/data_fetches` | api/collections/data_fetches | Will output all collected data from DataFetch table in JSON format |
