@@ -31,7 +31,7 @@ Alternatively, you can use the [live application](https://best-buy-data-collecti
 ## Technologies and Libraries
 
 - Ruby on Rails
-- Postgresql
+- PostgreSQL
 - Nokogiri
 - CSV
 
