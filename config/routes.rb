@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get 'collections/brand' => 'collections#get_brand', as: 'get_brand'
     get 'collections/products' => 'collections#all_products', as: 'all_products'
     get 'collections/product' => 'collections#get_product', as: 'get_product'
+    get 'collections/data_fetch/dates' => 'collections#data_for_dates', as: 'data_for_dates'
   end
 end

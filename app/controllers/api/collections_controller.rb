@@ -8,7 +8,7 @@ class Api::CollectionsController < ApplicationController
 
 
   def index
-    
+
   end
 
   def get_data
@@ -260,6 +260,14 @@ class Api::CollectionsController < ApplicationController
     @product = Product.where(model: query_string)
 
     render json: @product
+  end
+
+  def data_for_dates
+    date1 = params[:date1].split("/").map { |x| x.to_i }
+    date2 = params[:date2].split("/").map { |x| x.to_i }
+    @data = DataFetch.where(date: Date.new(*date1)..Date.new(*date2))
+
+    render json: @data
   end
 
 
